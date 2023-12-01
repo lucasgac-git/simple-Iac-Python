@@ -47,7 +47,7 @@
       ansible.builtin.pip:
         requirements: /tmp/app/requirements.txt
 
-    - name: Copy app files to remote folder
+    - name: Copy app files to remote directory
       ansible.builtin.copy:
-        src: /home/lucas/Desktop/projects/project3/pyapp
+        src: /src/directory/with/binary
         dest: /tmp/app/
