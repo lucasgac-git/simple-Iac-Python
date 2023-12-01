@@ -1,6 +1,6 @@
 ---
 - name: Install Python and Flask
-  hosts: localhost
+  hosts: web-servers
   become: yes
 
   tasks:
@@ -45,4 +45,9 @@
 
     - name: Install Flask and specific requirements using pip
       ansible.builtin.pip:
-        requirements: /home/vagrant/app/requirements.txt
+        requirements: /tmp/app/requirements.txt
+
+    - name: Copy app files to remote folder
+      ansible.builtin.copy:
+        src: /home/lucas/Desktop/projects/project3/pyapp
+        dest: /tmp/app/
