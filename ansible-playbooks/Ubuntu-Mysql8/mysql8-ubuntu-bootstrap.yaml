@@ -4,7 +4,7 @@
   become: yes  # Run tasks with elevated privileges
 
   vars_files:
-    -  vars.yaml
+    -  path/vars/vars.yaml
 
   tasks:
     - name: Update apt cache
