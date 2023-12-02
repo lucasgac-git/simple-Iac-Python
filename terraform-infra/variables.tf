@@ -1,5 +1,5 @@
 variable "aws_region" {
-  default = "sa-east-1"
+  default = "your_region"
 }
 
 variable "access_ip" {

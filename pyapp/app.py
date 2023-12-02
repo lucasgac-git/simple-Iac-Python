@@ -4,9 +4,9 @@ from flask_mysqldb import MySQL
 app = Flask(__name__)
 
 # MySQL Configuration
-app.config['MYSQL_HOST'] = '192.168.0.168'
-app.config['MYSQL_USER'] = 'pycon'
-app.config['MYSQL_PASSWORD'] = 'Pycon123!'
+app.config['MYSQL_HOST'] = 'PrivateDBip'
+app.config['MYSQL_USER'] = 'user'
+app.config['MYSQL_PASSWORD'] = 'password'
 app.config['MYSQL_DB'] = 'users'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 

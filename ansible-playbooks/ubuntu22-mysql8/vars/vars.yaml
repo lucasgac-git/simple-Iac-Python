@@ -1,7 +1,7 @@
 ---
-root_password: TestPassForDb111!
-admin_user: pycon
-admin_password: Pycon123!
+root_password: rootPassword
+admin_user: admin_user
+admin_password: admin_password
 db_name: users
 password_validation_policy: 1
 

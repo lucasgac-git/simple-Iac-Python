@@ -6,6 +6,6 @@
   tasks:
     - name: Copy app files to remote folder
       ansible.builtin.copy:
-        src: /home/lucas/Desktop/projects/project3/pyapp/
+        src: /path/pyapp/
         dest: /tmp/app/
         remote_src: yes

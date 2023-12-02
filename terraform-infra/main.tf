@@ -14,8 +14,8 @@ module "webserver" {
   public_subnet   = module.networking.public_subnet
   instance_type   = "t2.micro"
   volume_size     = 10
-  key_name        = "project3key"
-  public_key_path = "/home/lucas/Desktop/projects/project3/terraform-infra/key/project3key.pub"
+  key_name        = "mykey"
+  public_key_path = "/path/to/mykey.pub"
 
 }
 
@@ -26,6 +26,6 @@ module "dbserver" {
   instance_type   = "t2.micro"
   volume_size     = 10
   instance_state  = "running"
-  key_name        = "project3"
-  public_key_path = "/home/lucas/Desktop/projects/project3/terraform-infra/key/project3key.pub"
+  key_name        = "mykey"
+  public_key_path = "/path/to/mykey.pub"
 }

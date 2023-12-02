@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = "lgac-terraformstate"
+    bucket = "your-bucket"
     key    = "state/terraform.tfstate"
-    region = "sa-east-1"
+    region = "your-region"
   }
 }

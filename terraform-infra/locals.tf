@@ -4,7 +4,7 @@ locals {
 }
 
 locals {
-  az = "sa-east-1a"
+  az = "your-region"
 }
 
 locals {
