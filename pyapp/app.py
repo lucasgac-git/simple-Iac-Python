@@ -24,7 +24,7 @@ def add_user():
         email = request.form['email']
 
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO users (name, age, email) VALUES (%s, %s, %s)", (name, age, email))
+        cur.execute("INSERT INTO clients (name, age, email) VALUES (%s, %s, %s)", (name, age, email))
         mysql.connection.commit()
         cur.close()
 
@@ -33,11 +33,11 @@ def add_user():
 @app.route('/users')
 def users():
     cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM users")
+    cur.execute("SELECT * FROM clients")
     users = cur.fetchall()
     cur.close()
 
     return render_template('users.html', users=users)
 
 if __name__ == '__main__':
-    app.run(host='localhostip', port=desiredport, debug=True)
+    app.run(host='192.168.0.38', port=5000, debug=True)

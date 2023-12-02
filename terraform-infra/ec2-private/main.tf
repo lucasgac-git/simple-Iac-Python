@@ -24,6 +24,13 @@ resource "aws_instance" "demo_db" {
     volume_size = var.volume_size
   }
 
+  user_data = <<-EOF
+              #!/bin/bash
+              apt-add-repository ppa:ansible/ansible
+              apt update -y
+              apt install ansible -y
+              EOF
+
   tags = {
     Name = "Demo-mysql-server"
   }

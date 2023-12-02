@@ -1,0 +1,54 @@
+---
+- name: Install Python and Flask
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install Python 3 and pip
+      package:
+        name: "{{item}}"
+        state: present
+        update_cache: yes
+      loop:
+        - python3
+        - python3-pip
+        - python3-dev
+        - default-libmysqlclient-dev 
+        - build-essential
+        - pkg-config
+        - mysql-client
+      become: yes
+
+    - name: Create project directory
+      ansible.builtin.file:
+        path: "/tmp/app"
+        state: directory
+        mode: '0755'
+
+    - name: Create requirements.txt file
+      ansible.builtin.file:
+        path: "/tmp/app/requirements.txt"
+        state: touch
+
+    - name: Write software requirements to file
+      ansible.builtin.blockinfile:
+        path: "/tmp/app/requirements.txt"
+        block: |
+          Flask==2.2
+          Werkzeug==2.3.0
+          python-decouple
+          flask-mysqldb
+
+    - name: Install Flask and specific requirements using pip
+      ansible.builtin.pip:
+        requirements: /tmp/app/requirements.txt
+
+    - name: Copy app files to remote folder
+      ansible.builtin.copy:
+        src: /home/lucas/Desktop/projects/project3/pyapp
+        dest: /tmp/app/
+    

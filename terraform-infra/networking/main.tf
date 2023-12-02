@@ -64,6 +64,7 @@ resource "aws_eip" "db_eip" {
   tags = {
     Name = "Database-eip"
   }
+
 }
 
 #############
@@ -77,6 +78,7 @@ resource "aws_nat_gateway" "db_natgw" {
   tags = {
     Name = "Database-Nat-gw"
   }
+
 }
 
 

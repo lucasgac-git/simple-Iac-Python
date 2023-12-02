@@ -1,6 +1,7 @@
 ---
-root_password: your_root_password
-admin_user: your_admin_user
-admin_password: your_admin_password
-db_name: yourdbname
-password_validation_policy: 1 # Mysql 8 secure install policy (0, 1 or 2)
+root_password: TestPassForDb111!
+admin_user: pycon
+admin_password: Pycon123!
+db_name: users
+password_validation_policy: 1
+

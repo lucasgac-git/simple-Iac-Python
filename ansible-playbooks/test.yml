@@ -1,0 +1,11 @@
+---
+- name: Install Python and Flask
+  hosts: web-servers
+  become: yes
+
+  tasks:
+    - name: Copy app files to remote folder
+      ansible.builtin.copy:
+        src: /home/lucas/Desktop/projects/project3/pyapp/
+        dest: /tmp/app/
+        remote_src: yes
