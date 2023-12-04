@@ -28,7 +28,8 @@ In this section, I'll explain what is going to be built with the Terraform code 
 
     c - variables.tf: Configuring the default value for the region and the and the IP (or network) that is going to be able to access the services;
 
-    d - locals.tf: Configuring the local values for the VPC CIDR, the public CIDR (Security group access), the region (static), and all the security groups and their specifications. The security group definition here is for a dynamic block in the networking module (main.tf), in the Security Group section.; 
+    d - locals.tf: Configuring the local values for the VPC CIDR, the public CIDR (Security group access), the region (static), and all the security groups and their specifications. 
+    The security group definition here is for a dynamic block in the networking module (main.tf), in the Security Group section.; 
 
     e - output.tf: Print in the shell the public IP of the public instance.
 
@@ -56,7 +57,8 @@ In this section, I'll explain what is going to be built with the Terraform code 
 
 This module defines what configuration the EC2 instances will get:
 
-    a - A data block for specifying an AMI: This block defines which AMI all the instances using this module will get. The AMI id and other data changes from different regions and AZs, so it's necessary identify which one is required for your region of choice;
+    a - A data block for specifying an AMI: This block defines which AMI all the instances using this module will get. 
+    The AMI id and other data changes from different regions and AZs, so it's necessary identify which one is required for your region of choice;
 
     b - 1 Private key generation to the instance;
 
