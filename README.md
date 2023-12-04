@@ -68,3 +68,22 @@ This module is used for the Database. Configuration follows the same as above, b
 
 Disclaimer: this instance can only be accessed through the EC2 public instance
 
+
+2) Ansible Playbooks
+
+There are 2 ansible playbooks that are part of the execution a simple automation of this project resouces, one for the web instance and the other for the DB instance;
+
+The execution of these playbooks are going to be both local and remotly (in the host operating system).
+
+2.1. Pythop-app playbook
+
+This playbook will remotely install in all web-servers (defined in the inventory.ini file) all packages and depedencies of this simple app,  and also will copy the applcation files from the local machine to the remote instance, using the ssh key created in the terraform module.
+
+This playbook also copies a dump.sql file, containing necessary tables structure to be imported to the database. These can be copied to the isntance via SCP (need to copy the ssh key) or copying the content over clipboard and creating a new dump.sql file.
+
+
+2.2. MySQL 8 bootstrap (Ubuntu 22)
+
+This playbook content must be copied to the host instance for local execution due to the lack of public IP for a remote ssh connection.
+
+The tasks in this playbook install packages and dependencies for the project, executes the secure installation process, sets the root password and creates an admin user.
