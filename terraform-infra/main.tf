@@ -26,6 +26,6 @@ module "dbserver" {
   instance_type   = "t2.micro"
   volume_size     = 10
   instance_state  = "running"
-  key_name        = "mykey"
-  public_key_path = "/path/to/mykey.pub"
+  key_name        = "mykey2"
+  public_key_path = "/path/to/mykey2.pub"
 }
